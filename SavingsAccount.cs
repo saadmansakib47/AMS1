@@ -8,8 +8,8 @@ namespace AMS1
 {
     internal class SavingsAccount: Account 
     {
-        private const decimal MinimumBalance = 1000;
-        private const decimal MaximumWithdrawalAmount = 15000;
+        private const decimal MinimumBalance = 1000; //for Savings Account
+        private const decimal MaximumWithdrawalAmount = 15000; //for Savings Account
 
         public SavingsAccount(string accountNumber, string accountHolderName, decimal initialBalance, string signature)
             : base(accountNumber, accountHolderName, initialBalance, signature)
@@ -38,6 +38,14 @@ namespace AMS1
                 Console.WriteLine("Withdrawal limit exceeded or minimum balance requirement not met."); 
                 return false;
             }
+        }
+
+        public override void CalculateInterest()
+        {
+            //10% interest 
+            decimal interest = Balance * 0.10m;
+            Balance = Balance + interest; 
+            Console.WriteLine($"Interest calculated: {interest:C}. New balance: {Balance:C}");
         }
     }
 }

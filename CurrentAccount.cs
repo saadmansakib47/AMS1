@@ -8,8 +8,8 @@ namespace AMS1
 {
     internal class CurrentAccount : Account
     {
-        private const decimal MinimumBalance = 1000;
-        private const decimal MaximumWithdrawalAmount = 15000;
+        private const decimal MinimumBalance = 500; //for Current Account
+        private const decimal MaximumWithdrawalAmount = 20000; //for Current Account
 
         public CurrentAccount(string accountNumber, string accountHolderName, decimal initialBalance, string signature)
             : base(accountNumber, accountHolderName, initialBalance, signature)
@@ -38,5 +38,14 @@ namespace AMS1
                 return false;
             }
         }
+
+        public override void CalculateInterest()
+        {
+            //8% interest 
+            decimal interest = Balance * 0.08m;
+            Balance = Balance + interest;
+            Console.WriteLine($"Interest calculated: {interest:C}. New balance: {Balance:C}");
+        }
+
     }
 }
