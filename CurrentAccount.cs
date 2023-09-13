@@ -42,9 +42,9 @@ namespace AMS1
         public override void CalculateInterest()
         {
             //8% interest 
-            decimal interest = Balance * 0.08m;
-            Balance = Balance + interest;
-            Console.WriteLine($"Interest calculated: {interest:C}. New balance: {Balance:C}");
+            decimal Interest = Balance * 0.08m;
+            Balance = Balance + Interest;
+            Console.WriteLine($"Interest calculated: {Interest:C}. New balance: {Balance}");
         }
 
     }
