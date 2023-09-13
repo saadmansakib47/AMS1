@@ -42,6 +42,11 @@ namespace AMS1
             }
         }
 
+        public virtual void CalculateInterest()
+        {
+           
+        }
+
         public void CheckBalance()
         {
             Console.WriteLine($"Account Number: {AccountNumber}") ;
